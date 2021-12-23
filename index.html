@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CompoVerse</title>
+    <link type="image/x-icon" href="./img/favicon-16x16.ico" rel="icon">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Serif' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html" title="To the main page">
+                <img id="logo-img" class="logo-img" src="img/favicon-16x16.png">
+            </a>
+        </div>
+        <nav>
+            <button id="contacts">Login</button>
+            <button id="about">Sign up</button>
+            <button id="faq">Faq</button>
+        </nav>
+    </header>
+    <main>
+        <div class="content">   
+            <div class="cell">
+            <img src="img/img1.jpg" alt="">
+                <div class="text">
+                    <p>The personal computer is one of the most common types of computer due to its versatility and relatively low price. Desktop personal computers have a monitor, a keyboard, a mouse, and a computer case. The computer case holds the motherboard, fixed or removable disk drives for data storage, the power supply, and may contain other peripheral devices such as modems or network interfaces.</p>
+                </div>
+                <div class="bb">
+                    <button>read...</button>
+                </div>
+            </div>
+
+            <div  class="cell">
+                <img src="img/img2.jpg" alt="">
+                <div class="text">
+                <p>Some models of desktop computers integrated the monitor and keyboard into the same case as the processor and power supply. Separating the elements allows the user to arrange the components in a pleasing, comfortable array, at the cost of managing power and data cables between them.</p>
+                </div> 
+                <div class="bb">
+                    <button>read...</button>
+                </div> 
+            </div>
+
+            <div  class="cell">
+            <img src="img/img3.jpg" alt="">
+                <div class="text">
+                <p>Case modification, commonly referred to as case modding, is the modification of a computer case or a video game console chassis. Modifying a computer case in any non-standard way is considered a case mod. Modding is done, particularly by hardware enthusiasts, to show off a computer's apparent power by showing off the internal hardware, and also to make it look aesthetically pleasing to the owner.</p>
+                </div> 
+                <div  class="bb">
+                    <button>read...</button>
+                </div> 
+            </div>
+        </div>
+
+        <div class="PC">
+            <div class="pcop">
+                <p>Stylish PC's build</p>
+                <img src="img/PC1.jpg" alt="">
+            </div>
+            <div class="pcop">
+                <p>More awesome builds</p>
+                <img src="img/PC2.jpg" alt="">
+            </div>
+            <div class="pcop">
+                <form>
+                    <p><input type="search" name="q" placeholder="SearchItem"> 
+                    <input type="submit" value="Find"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <li>
+                <ul><a href="/a">about</a></ul>
+                <ul><a href="/a">contacts</a></ul>
+                <ul><a href="/a">support</a></ul>
+                <ul><a href="/a">feedback</a></ul>
+                <ul><a href="/a">our partners</a></ul>
+            </li>
+        </div>
+        
+        <div>
+            <li>
+                <ul><a href="/a">terms of service</a></ul>
+                <ul><a href="/a">vaccations</a></ul>
+                <ul><a href="/a">privacy policy</a></ul>
+                <ul><a href="/a">statements</a></ul>
+                <ul><a href="/a">stay close</a></ul>
+            </li>
+        </div>
+        <div class="img">
+            <img class="logo-out" src="img/favicon-16x16.png">
+            <p>CompoVerse</p>
+        </div>
+    </footer>
+
+    <script>
+        window.onload = () => {
+            const carts = document.getElementsByClassName('cell')
+        for (var i = 0; i < carts.length; i++) {
+            const cart = carts[i];
+            const text = cart.getElementsByTagName('p')[0];
+            if (text.scrollHeight > text.offsetHeight) {
+                cart.setAttribute('data-collapsed', 'true')
+            }
+            const button = cart.getElementsByTagName('button')[0];
+            button.addEventListener('click', () => {
+                const isCurrentlyCollapsed = cart.getAttribute('data-collapsed');
+                cart.setAttribute('data-collapsed', isCurrentlyCollapsed === 'true' ? 'false' : 'true');
+            })
+        }
+        };     
+    </script>
+</body>
+
+</html>
